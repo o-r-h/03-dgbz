@@ -1,0 +1,25 @@
+<h1>DBZ main page</h1>
+<hr>
+<div class="row">
+  <div class="col">
+
+      <!-- Esta lista viene del modulo main page
+      el characterList esta en el listcomponent "publico"
+      y lo llenamos con el characterMainList que tenemos en el main -->
+
+      <!-- cuando queremos mandar del padre al hijo, o queremos
+      asignar un atributo usamos [] -->
+   <dbz-list
+   [characterList]="charactersMainList"
+   (onDelete)="onDeleteCharacterById($event)"
+   ></dbz-list>
+
+
+
+  </div>
+
+  <div class ="col">
+      <!-- cuando queremos escuchar eventos usamos () -->
+     <dbz-add-character (onNewCharacter)="onNewCharacter($event)"  > </dbz-add-character>
+  </div>
+</div>
